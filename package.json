@@ -2,10 +2,10 @@
   "name": "desktop-app",
   "productName": "desktop-app",
   "version": "1.0.0",
-  "description": "My Electron application description",
+  "description": "PrintEZ Factory Desktop App",
   "main": "src/index.js",
   "scripts": {
-    "start": "electron-forge start",
+    "start": "APP_ENV=dev electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
@@ -26,6 +26,8 @@
     "@electron-forge/maker-rpm": "^6.1.1",
     "@electron-forge/maker-squirrel": "^6.1.1",
     "@electron-forge/maker-zip": "^6.1.1",
-    "electron": "24.1.1"
+    "dotenv": "^16.0.3",
+    "electron": "24.1.1",
+    "electron-devtools-installer": "^3.2.0"
   }
 }
