@@ -27,6 +27,8 @@ module.exports = async (mainWindow) => {
         const vPath = Array.isArray(pathFile) ? path.join(...pathFile) : pathFile
         await shell.openPath(vPath)
 
-        return true
+        return {
+            path: vPath
+        }
     })
 }
