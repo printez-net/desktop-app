@@ -4,6 +4,9 @@
   "version": "1.0.0",
   "description": "PrintEZ Factory Desktop App",
   "main": "src/index.js",
+  "build": {
+    "appId": "net.printez.factory"
+  },
   "scripts": {
     "dev": "NODE_ENV=development electron-forge start",
     "package": "electron-forge package",
