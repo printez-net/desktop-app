@@ -10,8 +10,6 @@ console.log('iconPath', iconPath)
 
 
 module.exports = async () => {
-    const isDev = _isDev()
-
     // Create the browser window.
     const mainWindow = new BrowserWindow({
         width: 800,
@@ -26,9 +24,4 @@ module.exports = async () => {
 
     mainWindow.maximize()
     await mainWindow.loadURL(appUrl)
-
-    // Open the DevTools.
-    if (isDev) {
-        mainWindow.webContents.openDevTools()
-    }
 }

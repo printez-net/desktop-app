@@ -10,7 +10,6 @@ module.exports = async (mainWindow) => {
         return dialog.showOpenDialog(mainWindow, {
             title: vTitle,
             properties: ['openDirectory', 'createDirectory'],
-
         })
     })
 
