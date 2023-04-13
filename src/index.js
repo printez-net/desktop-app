@@ -9,6 +9,9 @@ if (require('electron-squirrel-startup')) {
     app.quit()
 }
 
+const iconPath = require('path').join(__dirname, '../assets/images/logo-1024.png')
+console.log('iconPath', iconPath)
+
 const _onReady = async () => {
     // Create the browser window.
     const mainWindow = new BrowserWindow({
@@ -17,6 +20,7 @@ const _onReady = async () => {
         webPreferences: {
             preload: path.join(__dirname, 'preload.js'),
         },
+        icon: iconPath
     })
 
     mainWindow.maximize()
