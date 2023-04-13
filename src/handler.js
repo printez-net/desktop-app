@@ -1,5 +1,6 @@
 const {ipcMain, dialog, shell} = require('electron')
 const downloadFileToLocal = require('./actions/files/downloadFileToLocal')
+const path = require('path')
 
 
 module.exports = async (mainWindow) => {
@@ -20,10 +21,12 @@ module.exports = async (mainWindow) => {
     })
 
     ipcMain.handle('openFinder', async (event, args) => {
-        const {path} = Object.assign({}, args)
-        if (!path) return false
+        const {path: pathFile} = Object.assign({}, args)
+        if (!pathFile) return false
 
-        await shell.openPath(path)
+        const vPath = Array.isArray(pathFile) ? path.join(...pathFile) : pathFile
+        await shell.openPath(vPath)
+
         return true
     })
 }

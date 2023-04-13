@@ -5,11 +5,11 @@
   "description": "PrintEZ Factory Desktop App",
   "main": "src/index.js",
   "scripts": {
-    "dev": "APP_ENV=dev electron-forge start",
+    "dev": "NODE_ENV=development electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
-    "lint": "echo \"No linting configured\""
+    "release:win": "NODE_ENV=production electron-builder --win --x64"
   },
   "keywords": [],
   "author": {
@@ -31,6 +31,7 @@
     "@electron-forge/maker-squirrel": "^6.1.1",
     "@electron-forge/maker-zip": "^6.1.1",
     "electron": "24.1.1",
+    "electron-builder": "^23.6.0",
     "electron-devtools-installer": "^3.2.0"
   }
 }
