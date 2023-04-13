@@ -1,6 +1,6 @@
 module.exports = {
     packagerConfig: {
-        icon: 'assets/images/logo-1024.png',
+        icon: 'assets/images/logo',
     },
     rebuildConfig: {},
     makers: [
