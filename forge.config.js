@@ -21,4 +21,16 @@ module.exports = {
             config: {},
         },
     ],
+    publishers: [
+        {
+            name: '@electron-forge/publisher-github',
+            config: {
+                repository: {
+                    owner: 'printez-net',
+                    name: 'desktop-app'
+                },
+                prerelease: true
+            }
+        }
+    ]
 }
