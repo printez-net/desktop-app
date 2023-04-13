@@ -1,12 +1,10 @@
 const {BrowserWindow} = require("electron")
 const path = require("path")
-const _isDev = require('./_isDev')
 const handler = require('./handler')
 
 
 const appUrl = process.env.HOST_APP_URL || 'http://localhost:6100'
-const iconPath = require('path').join(__dirname, '../assets/images/logo.png')
-console.log('iconPath', iconPath)
+const iconPath = path.join(__dirname, '../assets/images/logo.png')
 
 
 module.exports = async () => {
