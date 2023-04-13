@@ -1,6 +1,6 @@
 {
   "name": "desktop-app",
-  "productName": "desktop-app",
+  "productName": "PrintEZ",
   "version": "1.0.0",
   "description": "PrintEZ Factory Desktop App",
   "main": "src/index.js",

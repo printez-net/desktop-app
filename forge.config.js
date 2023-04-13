@@ -1,24 +1,24 @@
 module.exports = {
-  packagerConfig: {
-    icon: 'assets/images/logo-1024.png',
-  },
-  rebuildConfig: {},
-  makers: [
-    {
-      name: '@electron-forge/maker-squirrel',
-      config: {},
+    packagerConfig: {
+        icon: 'assets/images/logo-1024.png',
     },
-    {
-      name: '@electron-forge/maker-zip',
-      platforms: ['darwin'],
-    },
-    {
-      name: '@electron-forge/maker-deb',
-      config: {},
-    },
-    {
-      name: '@electron-forge/maker-rpm',
-      config: {},
-    },
-  ],
-};
+    rebuildConfig: {},
+    makers: [
+        {
+            name: '@electron-forge/maker-squirrel',
+            config: {},
+        },
+        {
+            name: '@electron-forge/maker-zip',
+            platforms: ['darwin'],
+        },
+        {
+            name: '@electron-forge/maker-deb',
+            config: {},
+        },
+        {
+            name: '@electron-forge/maker-rpm',
+            config: {},
+        },
+    ],
+}
