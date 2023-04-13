@@ -5,7 +5,7 @@
   "description": "PrintEZ Factory Desktop App",
   "main": "src/index.js",
   "scripts": {
-    "start": "APP_ENV=dev electron-forge start",
+    "dev": "APP_ENV=dev electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
