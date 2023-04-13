@@ -1,4 +1,5 @@
 const {ipcMain, dialog} = require('electron')
+const downloadFileToLocal = require('./actions/files/downloadFileToLocal')
 
 
 module.exports = async (mainWindow) => {
@@ -11,5 +12,11 @@ module.exports = async (mainWindow) => {
             properties: ['openDirectory', 'createDirectory'],
 
         })
+    })
+
+    ipcMain.handle('saveFile', async (event, args) => {
+        await downloadFileToLocal(args)
+
+        return true
     })
 }

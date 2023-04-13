@@ -2,7 +2,8 @@ const {contextBridge, ipcRenderer} = require('electron')
 
 
 const listHandlers = [
-    'openDirectory'
+    'openDirectory',
+    'saveFile',
 ]
 
 const api = {
