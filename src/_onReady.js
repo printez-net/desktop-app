@@ -1,6 +1,7 @@
 const {BrowserWindow} = require("electron")
 const path = require("path")
 const _isDev = require('./_isDev')
+const handler = require('./handler')
 
 
 const appUrl = process.env.HOST_APP_URL || 'http://localhost:6100'
@@ -20,6 +21,8 @@ module.exports = async () => {
         },
         icon: iconPath
     })
+
+    await handler(mainWindow)
 
     mainWindow.maximize()
     await mainWindow.loadURL(appUrl)

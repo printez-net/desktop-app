@@ -1,6 +1,16 @@
-const {contextBridge} = require('electron')
+const {contextBridge, ipcRenderer} = require('electron')
 
 
-contextBridge.exposeInMainWorld('desktopApp', {
+const listHandlers = [
+    'openDirectory'
+]
+
+const api = {
     isDesktop: true,
+}
+
+listHandlers.forEach(handlerName => {
+    api[handlerName] = (...args) => ipcRenderer.invoke(handlerName, ...args)
 })
+
+contextBridge.exposeInMainWorld('desktopApp', api)
