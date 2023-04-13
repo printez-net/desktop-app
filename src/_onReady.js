@@ -15,7 +15,8 @@ module.exports = async () => {
         webPreferences: {
             preload: path.join(__dirname, 'preload.js'),
         },
-        icon: iconPath
+        icon: iconPath,
+        title: 'PrintEZ'
     })
 
     await handler(mainWindow)
