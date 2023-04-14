@@ -1,5 +1,5 @@
 {
-  "name": "desktop-app",
+  "name": "@printez/desktop-app",
   "productName": "PrintEZ",
   "version": "1.0.0",
   "description": "PrintEZ Factory Desktop App",
@@ -34,6 +34,7 @@
     "@electron-forge/maker-rpm": "^6.1.1",
     "@electron-forge/maker-squirrel": "^6.1.1",
     "@electron-forge/maker-zip": "^6.1.1",
+    "@electron-forge/publisher-github": "^6.1.1",
     "electron": "24.1.1",
     "electron-builder": "^23.6.0",
     "electron-devtools-installer": "^3.2.0"
