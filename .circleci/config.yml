@@ -12,6 +12,9 @@ jobs:
           install-yarn: true
           node-version: '18'
       - run:
+          command: yarn set version stable
+          name: Set yarn upgrade to stable version
+      - run:
           command: yarn install
           name: Install dependencies
       - run:
