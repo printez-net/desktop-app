@@ -4,6 +4,9 @@
   "version": "1.0.0",
   "description": "PrintEZ Factory Desktop App",
   "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/printez-net/desktop-app",
   "scripts": {
     "dev": "NODE_ENV=development electron-forge start",
     "package": "NODE_ENV=production electron-forge package",
