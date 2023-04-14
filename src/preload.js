@@ -7,12 +7,12 @@ const listHandlers = [
     'openFinder',
 ]
 
-const api = {
-    isDesktop: true,
-}
-
+const handlers = {}
 listHandlers.forEach(handlerName => {
-    api[handlerName] = (...args) => ipcRenderer.invoke(handlerName, ...args)
+    handlers[handlerName] = (...args) => ipcRenderer.invoke(handlerName, ...args)
 })
 
-contextBridge.exposeInMainWorld('desktopApp', api)
+contextBridge.exposeInMainWorld('desktopApp', {
+    isDesktop: true,
+    handlers
+})
