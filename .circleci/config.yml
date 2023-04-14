@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build_apps:
+  build_windows:
     docker:
       - image: electronuserland/builder:wine
     steps:
@@ -11,12 +11,9 @@ jobs:
       - run:
           command: yarn release:win
           name: Build Windows app
-      - run:
-          command: yarn release:mac
-          name: Build MacOS Silicon app
 
 workflows:
   version: 2
   build:
     jobs:
-      - build_apps
+      - build_windows
