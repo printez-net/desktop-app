@@ -1,14 +1,27 @@
-version: 2
+version: 2.1
+orbs:
+  node: circleci/node@5.0.2
+
+
 jobs:
-  build_windows:
-    docker:
-      - image: electronuserland/builder:wine
+  deploy:
+    executor: node/default
     steps:
       - checkout
-      - run: yarn && yarn release:release
+      - node/install-packages:
+          pkg-manager: yarn
+      - run:
+          command: yarn dist
+          name: Build app
+      - persist_to_workspace:
+          root: ~/project
+          paths:
+            - .
 
 workflows:
-  version: 2
-  build:
+  test_my_app:
     jobs:
-      - build_windows
+      - deploy:
+          filters:
+            branches:
+              only: master
