@@ -5,7 +5,12 @@ jobs:
       - image: electronuserland/builder:wine
     steps:
       - checkout
-      - run: yarn && yarn make:win
+      - run:
+          command: yarn install
+          name: Install dependencies
+      - run:
+          command: yarn make:win
+          name: Build Windows app
 
 workflows:
   version: 2
