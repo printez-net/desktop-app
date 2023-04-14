@@ -12,6 +12,9 @@ jobs:
           install-yarn: true
           node-version: '18'
       - run:
+          command: sudo apt-get install --no-install-recommends -y libopenjp2-tools
+          name: Install libopenjp2-tools
+      - run:
           command: yarn -v
           name: Check yarn version
       - run:
@@ -26,7 +29,7 @@ jobs:
             - .
 
 workflows:
-  test_my_app:
+  build_apps:
     jobs:
       - deploy:
           filters:
