@@ -45,7 +45,6 @@
   "dmg": {
     "icon": "assets/images/logo.icns"
   },
-  "packageManager": "yarn@3.5.0",
   "build": {
     "appId": "net.printez.factory",
     "win": {
