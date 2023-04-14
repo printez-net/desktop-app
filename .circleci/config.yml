@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  node: circleci/node@5.0.2
+  node: circleci/node@5.1.0
 
 
 jobs:
@@ -8,9 +8,12 @@ jobs:
     executor: node/default
     steps:
       - checkout
-      - node/install-packages:
-          pkg-manager: yarn
-          yarn-version: 3.5.0
+      - node/install:
+          install-yarn:
+            version: '3.5.0'
+      - run:
+          command: yarn install
+          name: Install dependencies
       - run:
           command: yarn dist
           name: Build app
