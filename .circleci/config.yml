@@ -10,10 +10,11 @@ jobs:
       - checkout
       - node/install:
           install-yarn: true
+          yarn-version: 3.5.0
           node-version: '18'
       - run:
-          command: yarn set version stable
-          name: Set yarn upgrade to stable version
+          command: yarn -v
+          name: Check yarn version
       - run:
           command: yarn install
           name: Install dependencies
